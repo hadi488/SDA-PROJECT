@@ -1,0 +1,43 @@
+Introduction
+Start by introducing your project: “This is a Car Rental Service application built in Java using Swing for the GUI. The application allows users to search for cars based on criteria, book available cars, and unbook them if needed.”
+2. High-Level Architecture and Principles
+Layered Architecture: This project uses a simple layered approach, separating concerns into UI and business logic layers.
+UI Layer (CarRentalApp class): Manages user interactions, displays filters, and shows lists of booked and unbooked cars.
+Business Logic Layer (CarService class): Handles core functionality like searching, booking, and unbooking cars.
+Object-Oriented Design Principles:
+Encapsulation: Each class, such as Car, CarService, and CarRentalApp, encapsulates specific functionalities, keeping data and operations close together.
+Single Responsibility Principle: Each class has a focused responsibility. Car holds car properties, CarService manages car operations, and CarRentalApp is responsible for the GUI.
+Code Reusability and Maintainability: By structuring the code this way, it’s easy to expand or change individual parts without affecting others.
+3. Key Classes and How They Work
+Car Class:
+Represents a car object with attributes such as make, model, year, price, and booking status.
+Contains methods to get properties and toggle booking status.
+CarService Class:
+Acts as the service layer, managing a list of cars and providing methods to search, book, and unbook them.
+Includes methods:
+getAllCars(): Returns the list of all cars.
+searchCars(): Filters cars based on user-selected criteria (make, model, year, and price).
+bookCar() and unbookCar(): Change the booking status of a car and return messages confirming the action.
+4. User Interface and Use Case Implementation
+CarRentalApp Class (UI Layer):
+Manages the main window and user interface components, including filter options, buttons, and lists for booked and unbooked cars.
+UI Components:
+Dropdowns (JComboBox) for filtering by make, model, year, and price.
+Two lists (JList): One for showing booked cars and another for unbooked cars.
+Buttons for actions:
+Search Button: Triggers the updateCarLists() method to filter and display cars based on the selected criteria.
+Book Button: Books a selected unbooked car and updates the lists.
+Unbook Button: Unbooks a selected booked car and updates the lists.
+Update Mechanism (updateCarLists Method):
+Clears existing lists and populates them based on the current filter and booking status.
+Uses filters selected in the dropdowns to display only matching cars.
+5. Demonstrating the Use Cases
+Booking a Car:
+Select a car from the unbooked list and click “Book Car.”
+The CarService will mark the car as booked and update the lists.
+Unbooking a Car:
+Select a car from the booked list and click “Unbook Car.”
+The CarService will mark the car as unbooked, returning it to the available list.
+6. User Experience and Customizations
+Discuss the enhanced UI design, such as the color scheme and button styling.
+Mention how the color-coded lists make it easy for users to distinguish between booked and unbooked cars (e.g., booked cars have a Misty Rose background).
